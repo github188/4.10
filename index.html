@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet/less" href="css/styles.less">
+    <script src="js/less-1.7.0.min.js"></script>
+    <script src="js/echarts.js"></script>
+</head>
+<body>
+<section class="wrap">
+    <!--顶部装饰-->
+    <div class="header"></div>
+    <!--底部装饰-->
+    <div class="footer"></div>
+    <!--左上角时间及天气-->
+    <div class="title">
+        <!--时间日期-->
+        <div>
+            <p id="time"></p>
+            <p>
+                <span id="date"></span>
+                <span id="week"></span>
+                <span id="calDate"></span>
+            </p>
+            <p id="scrollBox">
+                <span>通告：尊敬的各位感谢使用中国电信网络生产指挥系统</span>
+            </p>
+        </div>
+        <!--天气-->
+        <div>
+            <p>
+                <i></i>
+                <span>天气：晴</span>
+                <span>气温：-1~10°</span>
+            </p>
+            <p>
+                <span>东南风2-3级</span>
+                <span>空气质量优</span>
+            </p>
+            <p>
+                <i></i>
+                <span>空气污染橙色预警</span>
+            </p>
+        </div>
+    </div>
+    <!--值班人员-->
+    <div class="box-1">
+        <div class="box_1">
+            <div class="box_1_container">
+                <div class="box_1_top">
+                    <div class="box_1_title">
+                        <span>值班人员</span>
+                    </div>
+                    <div class="box_1_bz">
+                        <p>值班班长</p>
+                        <p>工单质检岗</p>
+                        <div class="box_1_items">
+                            <div class="box_1_item">
+                                <img src="./images/box01_ava.png" class="box_1_item_ava" alt="">
+                                <span class="box_1_item_name">张三</span>
+                                <span class="box_1_item_phone">18100000000</span>
+                            </div>
+                            <div class="box_1_item">
+                                <img src="./images/box01_ava.png" class="box_1_item_ava" alt="">
+                                <span class="box_1_item_name">张三</span>
+                                <span class="box_1_item_phone">18100000000</span>
+                            </div>
+                            <div class="box_1_item">
+                                <img src="./images/box01_ava.png" class="box_1_item_ava" alt="">
+                                <span class="box_1_item_name">张三</span>
+                                <span class="box_1_item_phone">18100000000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box_1_line"></div>
+                <div class="box_1_bottom">
+                    <div class="box_1_bottom_title">值班人员</div>
+                    <div class="box_1_items">
+                        <div class="box_1_item">
+                            <img src="./images/box01_ava.png" class="box_1_item_ava" alt="">
+                            <span class="box_1_item_name">张三</span>
+                            <span class="box_1_item_phone">18100000000</span>
+                        </div>
+                        <div class="box_1_item">
+                            <img src="./images/box01_ava.png" class="box_1_item_ava" alt="">
+                            <span class="box_1_item_name">张三</span>
+                            <span class="box_1_item_phone">18100000000</span>
+                        </div>
+                        <div class="box_1_item">
+                            <img src="./images/box01_ava.png" class="box_1_item_ava" alt="">
+                            <span class="box_1_item_name">张三</span>
+                            <span class="box_1_item_phone">18100000000</span>
+                        </div>
+                        <div class="box_1_item">
+                            <img src="./images/box01_ava.png" class="box_1_item_ava" alt="">
+                            <span class="box_1_item_name">张三</span>
+                            <span class="box_1_item_phone">18100000000</span>
+                        </div>
+                        <div class="box_1_item">
+                            <img src="./images/box01_ava.png" class="box_1_item_ava" alt="">
+                            <span class="box_1_item_name">张三</span>
+                            <span class="box_1_item_phone">18100000000</span>
+                        </div>
+                        <div class="box_1_item">
+                            <img src="./images/box01_ava.png" class="box_1_item_ava" alt="">
+                            <span class="box_1_item_name">张三</span>
+                            <span class="box_1_item_phone">18100000000</span>
+                        </div>
+                        <div class="box_1_item">
+                            <img src="./images/box01_ava.png" class="box_1_item_ava" alt="">
+                            <span class="box_1_item_name">张三</span>
+                            <span class="box_1_item_phone">18100000000</span>
+                        </div>
+                        <div class="box_1_item">
+                            <img src="./images/box01_ava.png" class="box_1_item_ava" alt="">
+                            <span class="box_1_item_name">张三</span>
+                            <span class="box_1_item_phone">18100000000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--客户感知监控-->
+    <div class="box-2">
+        <div><p></p></div>
+        <div>
+            <ul>
+                <li>
+                    <p>宽带业务</p>
+                    <canvas id="c1"></canvas>
+                    <p>宽带感知优良率</p>
+                </li>
+                <li>
+                    <p>移动数据业务</p>
+                    <canvas id="c2"></canvas>
+                    <p>4G客户感知优良率</p>
+                </li>
+                <li>
+                    <p>语音业务</p>
+                    <canvas id="c3"></canvas>
+                    <p>无线掉线率</p>
+                </li>
+                <li>
+                    <p>语音业务</p>
+                    <canvas id="c4"></canvas>
+                    <p>呼叫建立成功率</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--网络安全防护情况-->
+    <div class="box-3">
+        <div><p></p></div>
+        <div>
+            <ul>
+                <li>
+                    <div>
+                        <p>0</p>
+                        <p>正常</p>
+                    </div>
+                    <p>网页篡改数</p>
+                </li>
+                <li>
+                    <div>
+                        <p>200</p>
+                        <p>异常</p>
+                    </div>
+                    <p>DDos防护重保客户数</p>
+                </li>
+                <li>
+                    <div>
+                        <p>200</p>
+                        <p>异常</p>
+                    </div>
+                    <p>DNS防护域名数</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--网络工单-->
+    <div class="box-4">
+        <div class="box_4">
+            <div class="box_4_title"><img src="./images/box04_title.png" alt=""></div>
+            <div class="box_4_container">
+                <div class="box_4_bar" id="echarts_01"></div>
+                <div><img src="./images/box04_title_02.png" alt=""></div>
+                <div class="box_4_gj">
+                    <div class="box_4_gj_left">
+                        <div class="progress">
+                            <div id="gj_1">
+                                <span>原始告警数</span>
+                                <div>
+                                    <div></div>
+                                    <span></span>
+                                </div>
+                                <span></span>
+                            </div>
+                            <div id="gj_2">
+                                <span>压缩后告警数</span>
+                                <div>
+                                    <div></div>
+                                    <span></span>
+                                </div>
+                                <span></span>
+                            </div>
+                            <div id="gj_3">
+                                <span>关联告警数</span>
+                                <div>
+                                    <div></div>
+                                    <span></span>
+                                </div>
+                                <span></span>
+                            </div>
+                            <div id="gj_4">
+                                <span>符合条件告警数</span>
+                                <div>
+                                    <div></div>
+                                    <span></span>
+                                </div>
+                                <span></span>
+                            </div>
+                            <div id="gj_5">
+                                <span>工单数</span>
+                                <div>
+                                    <div></div>
+                                    <span></span>
+                                </div>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box_4_gj_right">
+                        <div class="box_4_gj_item"><span>当前告警总数</span><span class="box_4_gj_num">011234</span></div>
+                        <div class="box_4_gj_item"><span>当前工单总数</span><span class="box_4_gj_num">000321</span></div>
+                        <div class="box_4_gj_item"><span>处理及时率</span><span class="box_4_gj_num">80%</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 客户工单 -->
+    <div class="box-5">
+        <div class="box_5">
+            <div class="box_5_title"><img src="./images/box05_title.png" alt=""></div>
+            <div class="box_5_container">
+                <div class="box_5_item_pannel">
+                    <div class="box_5_item_title">
+                        网络与信息安全管理部
+                    </div>
+                    <div class="box_5_item_container">
+                        <div class="box_5_item_content">
+                            <span class="box_5_item_num">00123</span>
+                            <span class="box_5_item_text">总量</span>
+                        </div>
+                        <div class="box_5_item_content">
+                            <span class="box_5_item_num">00123</span>
+                            <span class="box_5_item_text">总量</span>
+                        </div>
+                        <div class="box_5_item_content">
+                            <span class="box_5_item_num">00123</span>
+                            <span class="box_5_item_text">总量</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="box_5_item_pannel">
+                    <div class="box_5_item_title">
+                        网络与信息安全管理部
+                    </div>
+                    <div class="box_5_item_container">
+                        <div class="box_5_item_content">
+                            <span class="box_5_item_num">00123</span>
+                            <span class="box_5_item_text">总量</span>
+                        </div>
+                        <div class="box_5_item_content">
+                            <span class="box_5_item_num">00123</span>
+                            <span class="box_5_item_text">总量</span>
+                        </div>
+                        <div class="box_5_item_content">
+                            <span class="box_5_item_num">00123</span>
+                            <span class="box_5_item_text">总量</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="box_5_item_pannel">
+                    <div class="box_5_item_title">
+                        网络与信息安全管理部
+                    </div>
+                    <div class="box_5_item_container">
+                        <div class="box_5_item_content">
+                            <span class="box_5_item_num">00123</span>
+                            <span class="box_5_item_text">总量</span>
+                        </div>
+                        <div class="box_5_item_content">
+                            <span class="box_5_item_num">00123</span>
+                            <span class="box_5_item_text">总量</span>
+                        </div>
+                        <div class="box_5_item_content">
+                            <span class="box_5_item_num">00123</span>
+                            <span class="box_5_item_text">总量</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="box_5_item_pannel">
+                    <div class="box_5_item_title">
+                        网络与信息安全管理部
+                    </div>
+                    <div class="box_5_item_container">
+                        <div class="box_5_item_content">
+                            <span class="box_5_item_num">00123</span>
+                            <span class="box_5_item_text">总量</span>
+                        </div>
+                        <div class="box_5_item_content">
+                            <span class="box_5_item_num">00123</span>
+                            <span class="box_5_item_text">总量</span>
+                        </div>
+                        <div class="box_5_item_content">
+                            <span class="box_5_item_num">00123</span>
+                            <span class="box_5_item_text">总量</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="box_5_item_pannel">
+                    <div class="box_5_item_title">
+                        网络与信息安全管理部
+                    </div>
+                    <div class="box_5_item_container">
+                        <div class="box_5_item_content">
+                            <span class="box_5_item_num">00123</span>
+                            <span class="box_5_item_text">总量</span>
+                        </div>
+                        <div class="box_5_item_content">
+                            <span class="box_5_item_num">00123</span>
+                            <span class="box_5_item_text">总量</span>
+                        </div>
+                        <div class="box_5_item_content">
+                            <span class="box_5_item_num">00123</span>
+                            <span class="box_5_item_text">总量</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="box_5_item_pannel">
+                    <div class="box_5_item_title">
+                        网络与信息安全管理部
+                    </div>
+                    <div class="box_5_item_container">
+                        <div class="box_5_item_content">
+                            <span class="box_5_item_num">00123</span>
+                            <span class="box_5_item_text">总量</span>
+                        </div>
+                        <div class="box_5_item_content">
+                            <span class="box_5_item_num">00123</span>
+                            <span class="box_5_item_text">总量</span>
+                        </div>
+                        <div class="box_5_item_content">
+                            <span class="box_5_item_num">00123</span>
+                            <span class="box_5_item_text">总量</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="box_5_item_pannel">
+                    <div class="box_5_item_title">
+                        网络与信息安全管理部
+                    </div>
+                    <div class="box_5_item_container">
+                        <div class="box_5_item_content">
+                            <span class="box_5_item_num">00123</span>
+                            <span class="box_5_item_text">总量</span>
+                        </div>
+                        <div class="box_5_item_content">
+                            <span class="box_5_item_num">00123</span>
+                            <span class="box_5_item_text">总量</span>
+                        </div>
+                        <div class="box_5_item_content">
+                            <span class="box_5_item_num">00123</span>
+                            <span class="box_5_item_text">总量</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="box_5_item_pannel">
+                    <div class="box_5_item_title">
+                        网络与信息安全管理部
+                    </div>
+                    <div class="box_5_item_container">
+                        <div class="box_5_item_content">
+                            <span class="box_5_item_num">00123</span>
+                            <span class="box_5_item_text">总量</span>
+                        </div>
+                        <div class="box_5_item_content">
+                            <span class="box_5_item_num">00123</span>
+                            <span class="box_5_item_text">总量</span>
+                        </div>
+                        <div class="box_5_item_content">
+                            <span class="box_5_item_num">00123</span>
+                            <span class="box_5_item_text">总量</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="box_5_item_pannel">
+                    <div class="box_5_item_title">
+                        网络与信息安全管理部
+                    </div>
+                    <div class="box_5_item_container">
+                        <div class="box_5_item_content">
+                            <span class="box_5_item_num">00123</span>
+                            <span class="box_5_item_text">总量</span>
+                        </div>
+                        <div class="box_5_item_content">
+                            <span class="box_5_item_num">00123</span>
+                            <span class="box_5_item_text">总量</span>
+                        </div>
+                        <div class="box_5_item_content">
+                            <span class="box_5_item_num">00123</span>
+                            <span class="box_5_item_text">总量</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--中间模块-->
+    <div class="box-6">
+
+    </div>
+    <!--固网开通-->
+    <div class="box-7">
+        <div><p></p></div>
+        <div>
+            <!--专线开通宽带分布-->
+            <div>
+                <div>
+                    <p></p>
+                    <div>
+                        <span>在途单数总数</span>
+                        <span>317</span>
+                    </div>
+                    <div>
+                        <span>已开通订单数</span>
+                        <span>99</span>
+                    </div>
+                    <div class="progress">
+                        <div id="xq_kt">
+                            <span>西区已开通订单数</span>
+                            <div>
+                                <div></div>
+                                <span></span>
+                            </div>
+                            <span></span>
+                        </div>
+                        <div id="xq_zt">
+                            <span>西区在途订单数</span>
+                            <div>
+                                <div></div>
+                                <span></span>
+                            </div>
+                            <span></span>
+                        </div>
+                        <div id="xq_kt_jj">
+                            <span>已开通加急订单数</span>
+                            <div>
+                                <div></div>
+                                <span></span>
+                            </div>
+                            <span></span>
+                        </div>
+                        <div id="xq_zt_jj">
+                            <span>在途加急订单数</span>
+                            <div>
+                                <div></div>
+                                <span></span>
+                            </div>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="progress">
+                        <div id="zq_kt">
+                            <span>政企部已开通订单数</span>
+                            <div>
+                                <div></div>
+                                <span></span>
+                            </div>
+                            <span></span>
+                        </div>
+                        <div id="zq_zt">
+                            <span>政企部在途订单数</span>
+                            <div>
+                                <div></div>
+                                <span></span>
+                            </div>
+                            <span></span>
+                        </div>
+                        <div id="zq_kt_jj">
+                            <span>已开通加急订单数</span>
+                            <div>
+                                <div></div>
+                                <span></span>
+                            </div>
+                            <span></span>
+                        </div>
+                        <div id="zq_zt_jj">
+                            <span>在途加急订单数</span>
+                            <div>
+                                <div></div>
+                                <span></span>
+                            </div>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="progress">
+                        <div id="bq_kt">
+                            <span>北区已开通订单数</span>
+                            <div>
+                                <div></div>
+                                <span></span>
+                            </div>
+                            <span></span>
+                        </div>
+                        <div id="bq_zt">
+                            <span>北区在途订单数</span>
+                            <div>
+                                <div></div>
+                                <span></span>
+                            </div>
+                            <span></span>
+                        </div>
+                        <div id="bq_kt_jj">
+                            <span>已开通加急订单数</span>
+                            <div>
+                                <div></div>
+                                <span></span>
+                            </div>
+                            <span></span>
+                        </div>
+                        <div id="bq_zt_jj">
+                            <span>在途加急订单数</span>
+                            <div>
+                                <div></div>
+                                <span></span>
+                            </div>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="progress">
+                        <div id="tz_kt">
+                            <span>通州已开通订单数</span>
+                            <div>
+                                <div></div>
+                                <span></span>
+                            </div>
+                            <span></span>
+                        </div>
+                        <div id="tz_zt">
+                            <span>通州在途订单数</span>
+                            <div>
+                                <div></div>
+                                <span></span>
+                            </div>
+                            <span></span>
+                        </div>
+                        <div id="tz_kt_jj">
+                            <span>已开通加急订单数</span>
+                            <div>
+                                <div></div>
+                                <span></span>
+                            </div>
+                            <span></span>
+                        </div>
+                        <div id="tz_zt_jj">
+                            <span>在途加急订单数</span>
+                            <div>
+                                <div></div>
+                                <span></span>
+                            </div>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="progress">
+                        <div id="nq_kt">
+                            <span>南区已开通订单数</span>
+                            <div>
+                                <div></div>
+                                <span></span>
+                            </div>
+                            <span></span>
+                        </div>
+                        <div id="nq_zt">
+                            <span>南区在途订单数</span>
+                            <div>
+                                <div></div>
+                                <span></span>
+                            </div>
+                            <span></span>
+                        </div>
+                        <div id="nq_kt_jj">
+                            <span>已开通加急订单数</span>
+                            <div>
+                                <div></div>
+                                <span></span>
+                            </div>
+                            <span></span>
+                        </div>
+                        <div id="nq_zt_jj">
+                            <span>在途加急订单数</span>
+                            <div>
+                                <div></div>
+                                <span></span>
+                            </div>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="progress">
+                        <div id="hd_kt">
+                            <span>海淀已开通订单数</span>
+                            <div>
+                                <div></div>
+                                <span></span>
+                            </div>
+                            <span></span>
+                        </div>
+                        <div id="hd_zt">
+                            <span>海淀在途订单数</span>
+                            <div>
+                                <div></div>
+                                <span></span>
+                            </div>
+                            <span></span>
+                        </div>
+                        <div id="hd_kt_jj">
+                            <span>已开通加急订单数</span>
+                            <div>
+                                <div></div>
+                                <span></span>
+                            </div>
+                            <span></span>
+                        </div>
+                        <div id="hd_zt_jj">
+                            <span>在途加急订单数</span>
+                            <div>
+                                <div></div>
+                                <span></span>
+                            </div>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="progress">
+                        <div id="dx_kt">
+                            <span>大兴已开通订单数</span>
+                            <div>
+                                <div></div>
+                                <span></span>
+                            </div>
+                            <span></span>
+                        </div>
+                        <div id="dx_zt">
+                            <span>大兴在途订单数</span>
+                            <div>
+                                <div></div>
+                                <span></span>
+                            </div>
+                            <span></span>
+                        </div>
+                        <div id="dx_kt_jj">
+                            <span>已开通加急订单数</span>
+                            <div>
+                                <div></div>
+                                <span></span>
+                            </div>
+                            <span></span>
+                        </div>
+                        <div id="dx_zt_jj">
+                            <span>在途加急订单数</span>
+                            <div>
+                                <div></div>
+                                <span></span>
+                            </div>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--饼图-->
+            <div id="echarts_02"></div>
+            <!--区域预警-->
+            <div>
+                <p></p>
+                <ul>
+                    <li>
+                        <span>区域</span>
+                        <span>姓名</span>
+                        <span>带派单</span>
+                        <span>带改单</span>
+                        <span>带报单</span>
+                    </li>
+                    <li>
+                        <span>东城</span>
+                        <span>张三</span>
+                        <span>20</span>
+                        <span>10</span>
+                        <span>5</span>
+                    </li>
+                    <li>
+                        <span>东城</span>
+                        <span>张三</span>
+                        <span>20</span>
+                        <span>10</span>
+                        <span>5</span>
+                    </li>
+                    <li>
+                        <span>东城</span>
+                        <span>张三</span>
+                        <span>20</span>
+                        <span>10</span>
+                        <span>5</span>
+                    </li>
+                    <li>
+                        <span>东城</span>
+                        <span>张三</span>
+                        <span>20</span>
+                        <span>10</span>
+                        <span>5</span>
+                    </li>
+                    <li>
+                        <span>东城</span>
+                        <span>张三</span>
+                        <span>20</span>
+                        <span>10</span>
+                        <span>5</span>
+                    </li>
+                    <li>
+                        <span>东城</span>
+                        <span>张三</span>
+                        <span>20</span>
+                        <span>10</span>
+                        <span>5</span>
+                    </li>
+                    <li>
+                        <span>东城</span>
+                        <span>张三</span>
+                        <span>20</span>
+                        <span>10</span>
+                        <span>5</span>
+                    </li>
+                    <li>
+                        <span>东城</span>
+                        <span>张三</span>
+                        <span>20</span>
+                        <span>10</span>
+                        <span>5</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 系统链接 -->
+    <div class="box-8">
+        <div class="box_8">
+            <div class="box_8_title"><img src="./images/box08_title.png" alt=""></div>
+            <div class="box_8_container">
+                <div class="box_8_app">
+                    <a href=""><img src="./images/bo08_icon01.png" alt=""></a>
+                    <span>应用名称</span>
+                </div>
+                <div class="box_8_app">
+                    <a href=""><img src="./images/bo08_icon02.png" alt=""></a>
+                    <span>应用名称</span>
+                </div>
+                <div class="box_8_app">
+                    <a href=""><img src="./images/bo08_icon03.png" alt=""></a>
+                    <span>应用名称</span>
+                </div>
+                <div class="box_8_app">
+                    <a href=""><img src="./images/bo08_icon04.png" alt=""></a>
+                    <span>应用名称</span>
+                </div>
+                <div class="box_8_app">
+                    <a href=""><img src="./images/bo08_icon05.png" alt=""></a>
+                    <span>应用名称</span>
+                </div>
+                <div class="box_8_app">
+                    <a href=""><img src="./images/bo08_icon06.png" alt=""></a>
+                    <span>应用名称</span>
+                </div>
+                <div class="box_8_app">
+                    <a href=""><img src="./images/bo08_icon07.png" alt=""></a>
+                    <span>应用名称</span>
+                </div>
+                <div class="box_8_app">
+                    <a href=""><img src="./images/bo08_icon08.png" alt=""></a>
+                    <span>应用名称</span>
+                </div>
+                <div class="box_8_app">
+                    <a href=""><img src="./images/bo08_icon09.png" alt=""></a>
+                    <span>应用名称</span>
+                </div>
+                <div class="box_8_app">
+                    <a href=""><img src="./images/bo08_icon10.png" alt=""></a>
+                    <span>应用名称</span>
+                </div>
+                <div class="box_8_app">
+                    <a href=""><img src="./images/bo08_icon11.png" alt=""></a>
+                    <span>应用名称</span>
+                </div>
+                <div class="box_8_app">
+                    <a href=""><img src="./images/bo08_icon12.png" alt=""></a>
+                    <span>应用名称</span>
+                </div>
+                <div class="box_8_app">
+                    <a href=""><img src="./images/bo08_icon13.png" alt=""></a>
+                    <span>应用名称</span>
+                </div>
+                <div class="box_8_app">
+                    <a href=""><img src="./images/bo08_icon14.png" alt=""></a>
+                    <span>应用名称</span>
+                </div>
+                <div class="box_8_app">
+                    <a href=""><img src="./images/bo08_icon15.png" alt=""></a>
+                    <span>应用名称</span>
+                </div>
+                <div class="box_8_app">
+                    <a href=""><img src="./images/bo08_icon16.png" alt=""></a>
+                    <span>应用名称</span>
+                </div>
+                <div class="box_8_app">
+                    <a href=""><img src="./images/bo08_icon17.png" alt=""></a>
+                    <span>应用名称</span>
+                </div>
+                <div class="box_8_app">
+                    <a href=""><img src="./images/bo08_icon18.png" alt=""></a>
+                    <span>应用名称</span>
+                </div>
+                <div class="box_8_app">
+                    <a href=""><img src="./images/bo08_icon19.png" alt=""></a>
+                    <span>应用名称</span>
+                </div>
+                <div class="box_8_app">
+                    <a href=""><img src="./images/bo08_icon20.png" alt=""></a>
+                    <span>应用名称</span>
+                </div>
+                <div class="box_8_app">
+                    <a href=""><img src="./images/bo08_icon11.png" alt=""></a>
+                    <span>应用名称</span>
+                </div>
+                <div class="box_8_app">
+                    <a href=""><img src="./images/bo08_icon12.png" alt=""></a>
+                    <span>应用名称</span>
+                </div>
+                <div class="box_8_app">
+                    <a href=""><img src="./images/bo08_icon13.png" alt=""></a>
+                    <span>应用名称</span>
+                </div>
+                <div class="box_8_app">
+                    <a href=""><img src="./images/bo08_icon14.png" alt=""></a>
+                    <span>应用名称</span>
+                </div>
+                <div class="box_8_app">
+                    <a href=""><img src="./images/bo08_icon15.png" alt=""></a>
+                    <span>应用名称</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</section>
+</body>
+</html>
+<script src="js/jquery-1.10.1.min.js"></script>
+<script src="js/calendarDay.js"></script>
+<script src="js/index.js"></script>
